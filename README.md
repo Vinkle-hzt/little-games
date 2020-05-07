@@ -1,4 +1,17 @@
-# 小游戏 little games
-存储一些我写的一些小游戏
+# 小游戏
 
-restore some little games developed by myself
+用于存储我自己写的小游戏
+
+开发环境：Qt 5.14.2
+
+现已开发：五子棋
+
+
+
+# Little Games
+
+Restore little games developed by myself
+
+Development environment: Qt 5.14.2
+
+Already Developed: Gobang
