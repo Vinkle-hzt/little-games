@@ -30,7 +30,7 @@
     <property name="geometry">
      <rect>
       <x>640</x>
-      <y>30</y>
+      <y>40</y>
       <width>121</width>
       <height>61</height>
      </rect>
@@ -42,38 +42,12 @@
      <number>2</number>
     </property>
    </widget>
-   <widget class="QToolButton" name="toolButtonBegin">
+   <widget class="QToolButton" name="toolButtonExit">
     <property name="geometry">
      <rect>
       <x>640</x>
-      <y>130</y>
-      <width>121</width>
-      <height>61</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>...</string>
-    </property>
-    <property name="icon">
-     <iconset resource="image.qrc">
-      <normaloff>:/image/start.png</normaloff>:/image/start.png</iconset>
-    </property>
-    <property name="iconSize">
-     <size>
-      <width>100</width>
-      <height>100</height>
-     </size>
-    </property>
-    <property name="autoRaise">
-     <bool>true</bool>
-    </property>
-   </widget>
-   <widget class="QToolButton" name="toolButton_2">
-    <property name="geometry">
-     <rect>
-      <x>640</x>
-      <y>480</y>
-      <width>121</width>
+      <y>490</y>
+      <width>111</width>
       <height>61</height>
      </rect>
     </property>
@@ -94,37 +68,115 @@
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QLabel" name="labelBalck">
+   <widget class="QWidget" name="horizontalLayoutWidget">
     <property name="geometry">
      <rect>
-      <x>650</x>
+      <x>610</x>
       <y>230</y>
-      <width>101</width>
-      <height>91</height>
+      <width>168</width>
+      <height>31</height>
      </rect>
     </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="pixmap">
-     <pixmap resource="image.qrc">:/image/black.png</pixmap>
-    </property>
+    <layout class="QHBoxLayout" name="Choice">
+     <item>
+      <widget class="QRadioButton" name="radioButtonFirst">
+       <property name="text">
+        <string>人机先手</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QRadioButton" name="radioButtonSecond">
+       <property name="text">
+        <string>人机后手</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </widget>
-   <widget class="QLabel" name="labelWhite">
+   <widget class="QWidget" name="verticalLayoutWidget">
     <property name="geometry">
      <rect>
-      <x>650</x>
-      <y>360</y>
-      <width>101</width>
-      <height>91</height>
+      <x>640</x>
+      <y>120</y>
+      <width>121</width>
+      <height>101</height>
      </rect>
     </property>
-    <property name="text">
-     <string/>
+    <layout class="QVBoxLayout" name="Play">
+     <item>
+      <widget class="QToolButton" name="toolButtonGamer">
+       <property name="text">
+        <string>...</string>
+       </property>
+       <property name="icon">
+        <iconset resource="image.qrc">
+         <normaloff>:/image/playWithGamer.png</normaloff>:/image/playWithGamer.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>100</width>
+         <height>100</height>
+        </size>
+       </property>
+       <property name="autoRaise">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QToolButton" name="toolButtonCompuer">
+       <property name="text">
+        <string>...</string>
+       </property>
+       <property name="icon">
+        <iconset resource="image.qrc">
+         <normaloff>:/image/playWithComputer.png</normaloff>:/image/playWithComputer.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>100</width>
+         <height>100</height>
+        </size>
+       </property>
+       <property name="autoRaise">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="verticalLayoutWidget_2">
+    <property name="geometry">
+     <rect>
+      <x>640</x>
+      <y>280</y>
+      <width>111</width>
+      <height>208</height>
+     </rect>
     </property>
-    <property name="pixmap">
-     <pixmap resource="image.qrc">:/image/white.png</pixmap>
-    </property>
+    <layout class="QVBoxLayout" name="Tern">
+     <item>
+      <widget class="QLabel" name="labelBalck">
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap resource="image.qrc">:/image/black.png</pixmap>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="labelWhite">
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap resource="image.qrc">:/image/white.png</pixmap>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">

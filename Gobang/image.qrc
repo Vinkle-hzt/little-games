@@ -3,8 +3,10 @@
         <file>image/black.png</file>
         <file>image/exit.png</file>
         <file>image/main.png</file>
-        <file>image/start.png</file>
         <file>image/white.png</file>
         <file>image/front.png</file>
+        <file>image/playWithComputer.png</file>
+        <file>image/playWithGamer.png</file>
+        <file>image/last.png</file>
     </qresource>
 </RCC>
