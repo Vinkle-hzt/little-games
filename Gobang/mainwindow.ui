@@ -22,10 +22,16 @@
     <height>600</height>
    </size>
   </property>
+  <property name="mouseTracking">
+   <bool>true</bool>
+  </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
+   <property name="mouseTracking">
+    <bool>true</bool>
+   </property>
    <widget class="QLCDNumber" name="lcdnumberTime">
     <property name="geometry">
      <rect>
@@ -97,10 +103,10 @@
    <widget class="QWidget" name="verticalLayoutWidget">
     <property name="geometry">
      <rect>
-      <x>640</x>
-      <y>120</y>
-      <width>121</width>
-      <height>101</height>
+      <x>650</x>
+      <y>100</y>
+      <width>101</width>
+      <height>121</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="Play">

@@ -8,5 +8,6 @@
         <file>image/playWithComputer.png</file>
         <file>image/playWithGamer.png</file>
         <file>image/last.png</file>
+        <file>image/want.png</file>
     </qresource>
 </RCC>

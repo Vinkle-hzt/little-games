@@ -15,6 +15,8 @@ MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
+    //ui->centralWidget->setMouseTracking(true);
+
     ui->setupUi(this);
     qsrand(time(0));
 
@@ -63,6 +65,8 @@ void MainWindow::initChessboard()
         }
     }
     lastPosition = qMakePair(-1,-1);
+    wantPosition = qMakePair(-1,-1);
+
 
     timeNum = 30;
     ui->lcdnumberTime->display(timeNum);
@@ -109,8 +113,7 @@ bool MainWindow::isFull()
     }
     return true;
 }
-
-bool MainWindow::judgeWin(const int& i, const int& j)
+bool MainWindow::judgeWin(const int i, const int j)
 {
     int count = 1;
 
@@ -219,7 +222,8 @@ bool MainWindow::judgeWin(const int& i, const int& j)
     return false;
 }
 
-void MainWindow::win(const int& i, const int& j)
+void MainWindow::win(const int i, const int j)
+
 {
     if(judgeWin(i,j))
     {
@@ -231,7 +235,7 @@ void MainWindow::win(const int& i, const int& j)
     }
 }
 
-void MainWindow::gamerChess(const int& i,const int& j)
+void MainWindow::gamerChess(const int i,const int j)
 {
     if(gameStatus && inChessboard(i,j))
     {
@@ -270,6 +274,13 @@ void MainWindow::paintEvent(QPaintEvent *)
     QPainter p(this);
     p.drawPixmap(0,0,800,600,QPixmap(":/image/front.png"));
     p.drawPixmap(0,0,592,595, QPixmap(":/image/main.png"));
+
+    if(wantPosition!=qMakePair(-1,-1))
+    {
+        int i = wantPosition.first;
+        int j = wantPosition.second;
+        p.drawPixmap(start.x()+ (i-0.5)*gridW, start.y()+ (j-0.5)*gridH, gridW-2, gridH-2, QPixmap(":/image/want.png"));
+    }
 
     //绘制棋盘
     for (int i = 0; i < 19; ++i)
@@ -328,8 +339,16 @@ void MainWindow::mousePressEvent(QMouseEvent *e)
 
 void MainWindow::mouseMoveEvent(QMouseEvent *e)
 {
+
+    int i = qRound((e->x() - start.x()) / gridW);
+    int j = qRound((e->y() - start.y()) / gridH);
+    if(gameStatus&&inChessboard(i,j))
+    {
+        wantPosition = qMakePair(i,j);
+        update();
+    }
     //如果按住的位置不是棋盘位置，而且按住的是左键，需要移动窗口
-    if(e->pos().x()>600)
+    else
     {
         if(e->buttons() & Qt::LeftButton)
         {
