@@ -36,6 +36,7 @@ private slots:
 
     void on_toolButtonGamer_clicked();
 
+
     void on_toolButtonCompuer_clicked();
 
 private:

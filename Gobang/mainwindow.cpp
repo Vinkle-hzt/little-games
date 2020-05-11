@@ -67,6 +67,7 @@ void MainWindow::initChessboard()
     lastPosition = qMakePair(-1,-1);
     wantPosition = qMakePair(-1,-1);
 
+
     timeNum = 30;
     ui->lcdnumberTime->display(timeNum);
 
@@ -112,7 +113,6 @@ bool MainWindow::isFull()
     }
     return true;
 }
-
 bool MainWindow::judgeWin(const int i, const int j)
 {
     int count = 1;
@@ -223,6 +223,7 @@ bool MainWindow::judgeWin(const int i, const int j)
 }
 
 void MainWindow::win(const int i, const int j)
+
 {
     if(judgeWin(i,j))
     {
@@ -280,6 +281,7 @@ void MainWindow::paintEvent(QPaintEvent *)
         int j = wantPosition.second;
         p.drawPixmap(start.x()+ (i-0.5)*gridW, start.y()+ (j-0.5)*gridH, gridW-2, gridH-2, QPixmap(":/image/want.png"));
     }
+
     //绘制棋盘
     for (int i = 0; i < 19; ++i)
     {
@@ -354,7 +356,6 @@ void MainWindow::mouseMoveEvent(QMouseEvent *e)
         }
     }
 }
-
 
 void MainWindow::on_toolButtonExit_clicked()
 {
